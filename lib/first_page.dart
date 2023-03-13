@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:share_prefrances/registeration.dart';
 import 'package:share_prefrances/shared_prefrances.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -14,17 +15,17 @@ class first extends StatefulWidget {
 
 
 class _firstState extends State<first> {
-share shar=share();
+  var x=reg();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
           child: Column(
         children: [
-          ElevatedButton(onPressed: () {shar.setpref();}, child: Text("save")),
-          ElevatedButton(onPressed: () {shar.getpref();print(shar.username);}, child: Text("get")),
-          ElevatedButton(onPressed: () {shar.deletpref();}, child: Text("delet")),
-          Text("${shar.username}"),
+          ElevatedButton(onPressed: () {MyCache.SetString(key: MyChachKey.email, value: x.email.toString());}, child: Text("save")),
+          ElevatedButton(onPressed: () {MyCache.GetString(key: MyChachKey.email);}, child: Text("get")),
+
+          Text(""),
         ],
       )),
     );
