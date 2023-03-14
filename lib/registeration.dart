@@ -1,7 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:share_prefrances/sign_in.dart';
+import 'package:share_prefrances/sign_in.dart';
+
 
 class reg extends StatelessWidget {
   reg({Key? key}) : super(key: key);
@@ -43,7 +48,10 @@ class reg extends StatelessWidget {
                           content:
                           Text("Success")));
                     },
-                    child: Text("save"))
+                    child: Text("save")),
+                ElevatedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+                }, child: Text("sign in page"))
               ],
             ),
           ),
